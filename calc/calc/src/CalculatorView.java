@@ -68,5 +68,7 @@ public class CalculatorView {
     }
 
     public void setVisible(boolean b) {
+        frame.setVisible(b);
     }
+    
 }
