@@ -14,8 +14,8 @@ public class CalculatorViewListeners {
             public void actionPerformed(ActionEvent e) {
                 double operand1 = view.getOperand1();
                 double operand2 = view.getOperand2();
-                RationalNumber result = model.performRationalAddition(new RationalNumber((int) operand1, 1), new RationalNumber((int) operand2, 1));
-                view.setResult(result.toString());
+                double result = operand1 + operand2;
+                view.setResult(String.valueOf(result));
             }
         });
 
@@ -24,8 +24,8 @@ public class CalculatorViewListeners {
             public void actionPerformed(ActionEvent e) {
                 double operand1 = view.getOperand1();
                 double operand2 = view.getOperand2();
-                ComplexNumber result = model.performComplexAddition(new ComplexNumber(operand1, 0), new ComplexNumber(operand2, 0));
-                view.setResult(result.toString());
+                double result = operand1 - operand2;
+                view.setResult(String.valueOf(result));
             }
         });
     }

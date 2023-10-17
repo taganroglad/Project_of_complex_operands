@@ -14,4 +14,5 @@ public class RationalCalculator {
         int resultNumerator = newNumerator1 - newNumerator2;
         return new RationalNumber(resultNumerator, commonDenominator);
     }
+    
 }
