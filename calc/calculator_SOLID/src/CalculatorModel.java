@@ -1,22 +1,13 @@
 public class CalculatorModel {
-    private RationalNumber rationalResult;
-    private ComplexNumber complexResult;
-
-    public CalculatorModel() {
-        
-    }
-
-    public void performCalculation(String operation, Object operand1, Object operand2) {
-       
-    }
-
-    public RationalNumber getRationalResult() {
-        
-        return rationalResult;
-    }
-
-    public ComplexNumber getComplexResult() {
-        
-        return complexResult;
+    public double performCalculation(String operation, double operand1, double operand2) {
+        switch (operation) {
+            case "add":
+                return operand1 + operand2;
+            case "subtract":
+                return operand1 - operand2;
+            // Другие операции
+            default:
+                throw new IllegalArgumentException("Неподдерживаемая операция: " + operation);
+        }
     }
 }
