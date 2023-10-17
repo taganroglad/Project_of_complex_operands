@@ -1,14 +1,14 @@
-import javax.swing.*;
-import java.awt.event.ActionListener;
-import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
-
-public class CalculatorView {
+public class CalculatorViewUI {
     private JFrame frame;
     private JTextField operand1Field, operand2Field, resultField;
     private JButton addButton, subtractButton;
 
-    public CalculatorView() {
+    public CalculatorViewUI() {
         frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
@@ -35,6 +35,22 @@ public class CalculatorView {
         frame.setLocationRelativeTo(null);
     }
 
+    public void setAddButtonListener(ActionListener listener) {
+        addButton.addActionListener(listener);
+    }
+
+    public void setSubtractButtonListener(ActionListener listener) {
+        subtractButton.addActionListener(listener);
+    }
+
+    public void display() {
+        frame.setVisible(true);
+    }
+
+    public void setVisible(boolean b) {
+        frame.setVisible(b);
+    }
+    
     public double getOperand1() {
         try {
             return Double.parseDouble(operand1Field.getText());
@@ -54,21 +70,4 @@ public class CalculatorView {
     public void setResult(String result) {
         resultField.setText(result);
     }
-
-    public void setAddButtonListener(ActionListener listener) {
-        addButton.addActionListener(listener);
-    }
-
-    public void setSubtractButtonListener(ActionListener listener) {
-        subtractButton.addActionListener(listener);
-    }
-
-    public void display() {
-        frame.setVisible(true);
-    }
-
-    public void setVisible(boolean b) {
-        frame.setVisible(b);
-    }
-    
 }

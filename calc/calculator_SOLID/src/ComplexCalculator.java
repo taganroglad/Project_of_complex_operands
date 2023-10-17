@@ -1,11 +1,15 @@
 public class ComplexCalculator {
-    private ComplexNumber complexResult;
-
-    public void setComplexResult(ComplexNumber result) {
-        this.complexResult = result;
+    public ComplexNumber add(ComplexNumber num1, ComplexNumber num2) {
+        double realResult = num1.getRealPart() + num2.getRealPart();
+        double imaginaryResult = num1.getImaginaryPart() + num2.getImaginaryPart();
+        return new ComplexNumber(realResult, imaginaryResult);
     }
 
-    public ComplexNumber getComplexResult() {
-        return complexResult;
+    public ComplexNumber subtract(ComplexNumber num1, ComplexNumber num2) {
+        double realResult = num1.getRealPart() - num2.getRealPart();
+        double imaginaryResult = num1.getImaginaryPart() - num2.getImaginaryPart();
+        return new ComplexNumber(realResult, imaginaryResult);
     }
+
+    // Другие операции с комплексными числами
 }
