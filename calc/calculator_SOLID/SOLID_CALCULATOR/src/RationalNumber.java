@@ -1,9 +1,4 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-class RationalNumber {
+public class RationalNumber {
     private int numerator;
     private int denominator;
 
@@ -31,20 +26,5 @@ class RationalNumber {
     @Override
     public String toString() {
         return numerator + "/" + denominator;
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                JFrame frame = new JFrame("Rational Calculator");
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setLayout(new FlowLayout());
-
-                // Остальной код для создания интерфейса и обработчиков событий здесь.
-
-                frame.pack();
-                frame.setVisible(true);
-            }
-        });
     }
 }

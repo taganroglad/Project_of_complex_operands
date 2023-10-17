@@ -10,6 +10,4 @@ public class ComplexCalculator {
         double imaginaryResult = num1.getImaginaryPart() - num2.getImaginaryPart();
         return new ComplexNumber(realResult, imaginaryResult);
     }
-
-    // Другие операции с комплексными числами
 }

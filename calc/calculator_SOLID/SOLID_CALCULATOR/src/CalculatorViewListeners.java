@@ -1,21 +1,21 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CalculatorPresenter {
+public class CalculatorViewListeners {
+    private CalculatorViewUI view;
     private CalculatorModel model;
-    private CalculatorView view;
 
-    public CalculatorPresenter(CalculatorModel model, CalculatorView view) {
-        this.model = model;
+    public CalculatorViewListeners(CalculatorViewUI view, CalculatorModel model) {
         this.view = view;
+        this.model = model;
 
         view.setAddButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 double operand1 = view.getOperand1();
                 double operand2 = view.getOperand2();
-                double result = operand1 + operand2;
-                view.setResult(String.valueOf(result));
+                RationalNumber result = model.performRationalAddition(new RationalNumber((int) operand1, 1), new RationalNumber((int) operand2, 1));
+                view.setResult(result.toString());
             }
         });
 
@@ -24,8 +24,8 @@ public class CalculatorPresenter {
             public void actionPerformed(ActionEvent e) {
                 double operand1 = view.getOperand1();
                 double operand2 = view.getOperand2();
-                double result = operand1 - operand2;
-                view.setResult(String.valueOf(result));
+                ComplexNumber result = model.performComplexAddition(new ComplexNumber(operand1, 0), new ComplexNumber(operand2, 0));
+                view.setResult(result.toString());
             }
         });
     }

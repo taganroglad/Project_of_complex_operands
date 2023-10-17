@@ -1,7 +1,5 @@
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+import javax.swing.*;
+import java.awt.*;
 
 public class CalculatorViewUI {
     private JFrame frame;
@@ -35,22 +33,6 @@ public class CalculatorViewUI {
         frame.setLocationRelativeTo(null);
     }
 
-    public void setAddButtonListener(ActionListener listener) {
-        addButton.addActionListener(listener);
-    }
-
-    public void setSubtractButtonListener(ActionListener listener) {
-        subtractButton.addActionListener(listener);
-    }
-
-    public void display() {
-        frame.setVisible(true);
-    }
-
-    public void setVisible(boolean b) {
-        frame.setVisible(b);
-    }
-    
     public double getOperand1() {
         try {
             return Double.parseDouble(operand1Field.getText());
@@ -69,5 +51,17 @@ public class CalculatorViewUI {
 
     public void setResult(String result) {
         resultField.setText(result);
+    }
+
+    public void setAddButtonListener(ActionListener listener) {
+        addButton.addActionListener(listener);
+    }
+
+    public void setSubtractButtonListener(ActionListener listener) {
+        subtractButton.addActionListener(listener);
+    }
+
+    public void display() {
+        frame.setVisible(true);
     }
 }
