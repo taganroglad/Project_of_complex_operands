@@ -14,5 +14,15 @@ public class RationalCalculator {
         int resultNumerator = newNumerator1 - newNumerator2;
         return new RationalNumber(resultNumerator, commonDenominator);
     }
+    public RationalNumber multiply(RationalNumber num1, RationalNumber num2) {
+        int resultNumerator = num1.getNumerator() * num2.getNumerator();
+        int resultDenominator = num1.getDenominator() * num2.getDenominator();
+        return new RationalNumber(resultNumerator, resultDenominator);
+    }
+    public RationalNumber divide(RationalNumber num1, RationalNumber num2) {
+        int resultNumerator = num1.getNumerator() * num2.getDenominator();
+        int resultDenominator = num1.getDenominator() * num2.getNumerator();
+        return new RationalNumber(resultNumerator, resultDenominator);
+    }
     
 }

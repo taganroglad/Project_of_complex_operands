@@ -28,5 +28,29 @@ public class CalculatorViewListeners {
                 view.setResult(String.valueOf(result));
             }
         });
+        view.setMultiplyButtonListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double operand1 = view.getOperand1();
+                double operand2 = view.getOperand2();
+                double result = operand1 * operand2;
+                view.setResult(String.valueOf(result));
+    }
+});
+
+        view.setDivideButtonListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double operand1 = view.getOperand1();
+                double operand2 = view.getOperand2();
+                if (operand2 != 0) {
+                    double result = operand1 / operand2;
+                    view.setResult(String.valueOf(result));
+                } else {
+                    view.setResult("Error: Division by zero");
+                }
+            }
+        });
+
     }
 }

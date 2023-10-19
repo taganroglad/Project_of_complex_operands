@@ -1,8 +1,3 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 class RationalNumber {
     private int numerator;
     private int denominator;
@@ -36,23 +31,24 @@ class RationalNumber {
         return new RationalNumber(resultNumerator, commonDenominator);
     }
 
+    public RationalNumber multiply(RationalNumber other) {
+        int resultNumerator = this.numerator * other.numerator;
+        int resultDenominator = this.denominator * other.denominator;
+        return new RationalNumber(resultNumerator, resultDenominator);
+    }
+
+    public RationalNumber divide(RationalNumber other) {
+        if (other.numerator == 0) {
+            throw new ArithmeticException("Division by zero");
+        }
+
+        int resultNumerator = this.numerator * other.denominator;
+        int resultDenominator = this.denominator * other.numerator;
+        return new RationalNumber(resultNumerator, resultDenominator);
+    }
+
     @Override
     public String toString() {
         return numerator + "/" + denominator;
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                JFrame frame = new JFrame("Rational Calculator");
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.setLayout(new FlowLayout());
-
-                // Остальной код для создания интерфейса и обработчиков событий здесь.
-
-                frame.pack();
-                frame.setVisible(true);
-            }
-        });
     }
 }
