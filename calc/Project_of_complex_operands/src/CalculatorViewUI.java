@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 public class CalculatorViewUI {
     private JFrame frame;
     private JTextField operand1Field, operand2Field, resultField;
-    private JButton addButton, subtractButton;
+    private JButton addButton, subtractButton, multiplyButton, divideButton;
 
     public CalculatorViewUI() {
         frame = new JFrame("Calculator");
@@ -14,15 +14,11 @@ public class CalculatorViewUI {
 
         operand1Field = new JTextField(10);
         operand2Field = new JTextField(10);
-        operand1Field = new JTextField(10);
-        operand2Field = new JTextField(10);
-
 
         addButton = new JButton("Add");
         subtractButton = new JButton("Subtract");
-        JButton multiplyButton = new JButton("Multiply");
-        JButton divideButton = new JButton("Divide");
-
+        multiplyButton = new JButton("Multiply");
+        divideButton = new JButton("Divide");
 
         resultField = new JTextField(10);
         resultField.setEditable(false);
@@ -30,11 +26,6 @@ public class CalculatorViewUI {
         frame.add(new JLabel("Operand 1:"));
         frame.add(operand1Field);
         frame.add(new JLabel("Operand 2:"));
-        frame.add(new JLabel("Operand 1:"));
-        frame.add(operand1Field);
-        frame.add(new JLabel("Operand 2:"));
-        frame.add(operand2Field);
-
         frame.add(operand2Field);
         frame.add(addButton);
         frame.add(subtractButton);
@@ -75,13 +66,15 @@ public class CalculatorViewUI {
         subtractButton.addActionListener(listener);
     }
 
+    public void setMultiplyButtonListener(ActionListener listener) {
+        multiplyButton.addActionListener(listener);
+    }
+
+    public void setDivideButtonListener(ActionListener listener) {
+        divideButton.addActionListener(listener);
+    }
+
     public void display() {
         frame.setVisible(true);
-    }
-
-    public void setMultiplyButtonListener(ActionListener actionListener) {
-    }
-
-    public void setDivideButtonListener(ActionListener actionListener) {
     }
 }

@@ -28,6 +28,7 @@ public class CalculatorViewListeners {
                 view.setResult(String.valueOf(result));
             }
         });
+
         view.setMultiplyButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -35,8 +36,8 @@ public class CalculatorViewListeners {
                 double operand2 = view.getOperand2();
                 double result = operand1 * operand2;
                 view.setResult(String.valueOf(result));
-    }
-});
+            }
+        });
 
         view.setDivideButtonListener(new ActionListener() {
             @Override
@@ -51,6 +52,5 @@ public class CalculatorViewListeners {
                 }
             }
         });
-
     }
 }
